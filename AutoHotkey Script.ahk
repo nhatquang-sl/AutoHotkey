@@ -1,4 +1,6 @@
-﻿SetCapsLockState AlwaysOff
+﻿; HotKey: Win = #, Control = ^, Alt = !, Shift = +
+
+SetCapsLockState AlwaysOff
      
 Space::Send {Space}
 
@@ -93,45 +95,58 @@ Space & p::
 		Send {End}
 return
 
+; Ctrl + z, Ctrl + x, Ctrl + c, Ctrl + v, Ctrl + b
 Space & b:: ^b
 Space & z:: ^z
 Space & x:: ^x
 Space & c:: ^c
 Space & v:: ^v
 
+; Ctrl + Space
 ^Space:: Send {Ctrl down}{Space}{Ctrl up}
+
+; Ctrl + ., Ctrl + ,
+Space & .:: ^.
+Space & ,:: ^,
+
 
 ; move line up/down
 Space & w::Send !{up}       
 Space & s::Send !{down}
 
 Space & F1::
-WinGet, id, List,,, Program Manager
-CMDCode = 0
-Loop, %id%
-{
-    this_id := id%A_Index%
-	WinGet this_processName, ProcessName, ahk_id %this_id%`
-
-	WinGet active_id, ID, A
-	WinGet active_processName, ProcessName, A
-    
-	if (this_processName = "Code.exe") {
-		if (CMDCode = 1 or this_processName != active_processName) {
-			MsgBox, 4, , this_id = %this_id%`nactive_id=%active_id%`nthis_processName = %this_processName%`nactive_processName = %active_processName%`nCMDCode = %CMDCode%
-    	    IfMsgBox, NO, break
-			WinActivate, ahk_id %this_id%
-			return
-		}
-		else if (this_processName = active_processName) {
-			CMDCode = 1
-		}
-	}
-
-	;StringGetPos, pos, this_processName, Code
-}	 
+	SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
 return
-;    WinActivate, ahk_exe C:\Program Files\Microsoft VS Code\Code.exe
 
-LWin::LAlt
-LAlt::LWin
+Space & F2::
+	SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+return
+
+Space & F3::
+	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe")
+return
+
+SwitchOrStartApp(processName, exePath){
+	WinGet, id, List,,, Program Manager
+	idLast = ""
+	Loop, %id%
+	{
+		this_id := id%A_Index%
+		WinGet this_processName, ProcessName, ahk_id %this_id%`
+		
+		;MsgBox, 4, , this_processName = %this_processName%`nprocessName=%processName%
+		;IfMsgBox, NO, break
+		if this_processName = %processName%
+			idLast := id%A_Index%
+	}
+	
+	;MsgBox, 4, , idLast = %idLast%
+	if idLast = ""
+		Run %exePath%
+	else 
+		WinActivate, ahk_id %idLast%
+}
+
+
+;LWin::LAlt
+;LAlt::LWin
