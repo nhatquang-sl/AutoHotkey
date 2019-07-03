@@ -126,6 +126,10 @@ Space & F3::
 	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe")
 return
 
+Space & F4::
+	SwitchOrStartApp("powershell.exe", "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe")
+return
+
 SwitchOrStartApp(processName, exePath){
 	WinGet, id, List,,, Program Manager
 	idLast = ""
@@ -148,5 +152,5 @@ SwitchOrStartApp(processName, exePath){
 }
 
 
-;LWin::LAlt
-;LAlt::LWin
+LWin::LAlt
+LAlt::LWin
