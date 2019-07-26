@@ -1,7 +1,7 @@
 ﻿; HotKey: Win = #, Control = ^, Alt = !, Shift = +
 
 SetCapsLockState AlwaysOff
-     
+
 Space::Send {Space}
 
 ; CapsLock+I/K/J/L to Up/Down/Left/Right
@@ -101,6 +101,21 @@ Space & z:: ^z
 Space & x:: ^x
 Space & c:: ^c
 Space & v:: ^v
+Space & t:: ^t
+
+; Ctrl + 1, Ctrl + 2, Ctrl + 3, ..., Ctrl + 9
+Space & 1:: ^1
+Space & 2:: ^2
+Space & 3:: ^3
+Space & 4:: ^4
+Space & 5:: ^5
+Space & 6:: ^6
+Space & 7:: ^7
+Space & 8:: ^8
+Space & 9:: ^9
+
+; Ctrl + Tab
+Space & Tab:: ^Tab
 
 ; Ctrl + Space
 ^Space:: Send {Ctrl down}{Space}{Ctrl up}
@@ -115,19 +130,35 @@ Space & w::Send !{up}
 Space & s::Send !{down}
 
 Space & F1::
-	SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
+	if GetKeyState("Shift", "P")
+		Run "C:\Program Files\Microsoft VS Code\Code.exe"
+	else
+		SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
 return
 
 Space & F2::
-	SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+	if GetKeyState("Shift", "P")
+		Run "C:\Program Files\Mozilla Firefox\firefox.exe"
+	else 
+		SwitchOrStartApp("firefox.exe", "C:\Program Files\Mozilla Firefox\firefox.exe")
 return
 
 Space & F3::
-	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe")
+	if GetKeyState("Shift", "P")
+		Run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe"
+	else
+		SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe")
 return
 
 Space & F4::
 	SwitchOrStartApp("powershell.exe", "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe")
+return
+
+Space & F5:: 
+	if GetKeyState("Shift", "P")
+		Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+	else
+		SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 return
 
 SwitchOrStartApp(processName, exePath){
