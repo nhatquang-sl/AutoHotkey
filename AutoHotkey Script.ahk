@@ -120,9 +120,16 @@ Space & Tab:: ^Tab
 ; Ctrl + Space
 ^Space:: Send {Ctrl down}{Space}{Ctrl up}
 
-; Ctrl + ., Ctrl + ,
+; Ctrl + '.' Ctrl + ',' Ctrl + '`' 
 Space & .:: ^.
 Space & ,:: ^,
+Space & `:: ^`
+
+; Shift + '[' Shift + ']'
+Space & [:: +[
+Space & ]:: +]
+Space & ':: +'
+Space & `;:: +`;
 
 
 ; move line up/down
@@ -136,11 +143,11 @@ Space & F1::
 		SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
 return
 
-Space & F2::
+Space & F2:: 
 	if GetKeyState("Shift", "P")
-		Run "C:\Program Files\Mozilla Firefox\firefox.exe"
-	else 
-		SwitchOrStartApp("firefox.exe", "C:\Program Files\Mozilla Firefox\firefox.exe")
+		Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+	else
+		SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 return
 
 Space & F3::
@@ -154,11 +161,11 @@ Space & F4::
 	SwitchOrStartApp("powershell.exe", "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe")
 return
 
-Space & F5:: 
+Space & F5::
 	if GetKeyState("Shift", "P")
-		Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-	else
-		SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+		Run "C:\Program Files\Mozilla Firefox\firefox.exe"
+	else 
+		SwitchOrStartApp("firefox.exe", "C:\Program Files\Mozilla Firefox\firefox.exe")
 return
 
 SwitchOrStartApp(processName, exePath){
