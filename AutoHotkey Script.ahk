@@ -190,5 +190,5 @@ SwitchOrStartApp(processName, exePath){
 }
 
 
-LWin::LAlt
-LAlt::LWin
+;LWin::LAlt
+;LAlt::LWin
