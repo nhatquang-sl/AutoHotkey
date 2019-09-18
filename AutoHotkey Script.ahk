@@ -4,6 +4,12 @@ SetCapsLockState AlwaysOff
 
 Space::Send {Space}
 
+; Window + Up/Down/Left/Right
+Space & Up::Send #{Up}
+Space & Down::Send #{Down}
+Space & Left::Send #{Left}
+Space & Right::Send #{Right}
+
 ; CapsLock+I/K/J/L to Up/Down/Left/Right
 Space & i::
 	GetKeyState, state, Shift
