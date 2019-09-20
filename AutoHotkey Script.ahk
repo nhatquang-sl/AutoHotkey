@@ -109,17 +109,6 @@ Space & c:: ^c
 Space & v:: ^v
 Space & t:: ^t
 
-; Ctrl + 1, Ctrl + 2, Ctrl + 3, ..., Ctrl + 9
-Space & 1:: ^1
-Space & 2:: ^2
-Space & 3:: ^3
-Space & 4:: ^4
-Space & 5:: ^5
-Space & 6:: ^6
-Space & 7:: ^7
-Space & 8:: ^8
-Space & 9:: ^9
-
 ; Ctrl + Tab
 Space & Tab:: ^Tab
 
@@ -142,21 +131,21 @@ Space & `;:: +`;
 Space & w::Send !{up}       
 Space & s::Send !{down}
 
-Space & F1::
+Space & 1::
 	if GetKeyState("Shift", "P")
 		Run "C:\Program Files\Microsoft VS Code\Code.exe"
 	else
 		SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
 return
 
-Space & F2:: 
+Space & 2:: 
 	if GetKeyState("Shift", "P")
 		Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 	else
 		SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 return
 
-Space & F3::
+Space & 3::
 	if GetKeyState("Shift", "P")
 		Run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe"
 	else
