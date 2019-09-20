@@ -101,13 +101,14 @@ Space & p::
 		Send {End}
 return
 
-; Ctrl + z, Ctrl + x, Ctrl + c, Ctrl + v, Ctrl + b
+; Ctrl + z, Ctrl + x, Ctrl + c, Ctrl + v, Ctrl + b, Ctrl + h
 Space & b:: ^b
 Space & z:: ^z
 Space & x:: ^x
 Space & c:: ^c
 Space & v:: ^v
 Space & t:: ^t
+Space & h:: ^h
 
 ; Ctrl + Tab
 Space & Tab:: ^Tab
