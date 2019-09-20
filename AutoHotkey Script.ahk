@@ -4,6 +4,8 @@ SetCapsLockState AlwaysOff
 
 Space::Send {Space}
 
+Space & Esc::Send !{F4}
+
 ; Window + Up/Down/Left/Right
 Space & Up::Send #{Up}
 Space & Down::Send #{Down}
