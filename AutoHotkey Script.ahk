@@ -136,9 +136,9 @@ Space & s::Send !{down}
 
 Space & 1::
 	if GetKeyState("Shift", "P")
-		Run "C:\Program Files\Microsoft VS Code\Code.exe"
+		Run "C:\Users\quangnguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 	else
-		SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
+		SwitchOrStartApp("Code.exe", "C:\Users\quangnguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe")
 return
 
 Space & 2:: 
@@ -150,20 +150,20 @@ return
 
 Space & 3::
 	if GetKeyState("Shift", "P")
-		Run "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe"
+		Run "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe"
 	else
-		SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\devenv.exe")
+		SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
 return
 
-Space & F4::
+Space & 4::
 	SwitchOrStartApp("powershell.exe", "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe")
 return
 
-Space & F5::
+Space & 5::
 	if GetKeyState("Shift", "P")
-		Run "C:\Program Files\Mozilla Firefox\firefox.exe"
+		Run "C:\Program Files\Notepad++\notepad++.exe"
 	else 
-		SwitchOrStartApp("firefox.exe", "C:\Program Files\Mozilla Firefox\firefox.exe")
+		SwitchOrStartApp("firefox.exe", "C:\Program Files\Notepad++\notepad++.exe")
 return
 
 SwitchOrStartApp(processName, exePath){
