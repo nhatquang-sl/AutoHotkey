@@ -1,6 +1,7 @@
 ﻿; HotKey: Win = #, Control = ^, Alt = !, Shift = +
 
 SetCapsLockState AlwaysOff
+CapsLock::Control
 
 Space::Send {Space}
 
@@ -135,24 +136,15 @@ Space & w::Send !{up}
 Space & s::Send !{down}
 
 Space & 1::
-	if GetKeyState("Shift", "P")
-		Run "C:\Users\quangnguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-	else
-		SwitchOrStartApp("Code.exe", "C:\Users\quangnguyen\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+	SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
 return
 
 Space & 2:: 
-	if GetKeyState("Shift", "P")
-		Run "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-	else
-		SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+	SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
 return
 
 Space & 3::
-	if GetKeyState("Shift", "P")
-		Run "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe"
-	else
-		SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
+	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
 return
 
 Space & 4::
@@ -160,13 +152,20 @@ Space & 4::
 return
 
 Space & 5::
-	if GetKeyState("Shift", "P")
-		Run "C:\Program Files\Notepad++\notepad++.exe"
-	else 
-		SwitchOrStartApp("firefox.exe", "C:\Program Files\Notepad++\notepad++.exe")
+	SwitchOrStartApp("firefox.exe", "C:\Program Files\Slack\Slack.exe")
+return
+
+Space & 8::
+	SwitchOrStartApp("firefox.exe", "C:\Program Files\Notepad++\notepad++.exe")
+return
+
+Space & 9::
+	SwitchOrStartApp("firefox.exe", "C:\Users\HOME-PC\AppData\Local\Programs\Zalo\Zalo.exe")
 return
 
 SwitchOrStartApp(processName, exePath){
+	if GetKeyState("Shift", "P")
+		Run %exePath%
 	WinGet, id, List,,, Program Manager
 	idLast = ""
 	Loop, %id%
@@ -188,5 +187,5 @@ SwitchOrStartApp(processName, exePath){
 }
 
 
-;LWin::LAlt
-;LAlt::LWin
+LWin::LAlt
+LAlt::LWin
