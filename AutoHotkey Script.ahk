@@ -152,15 +152,19 @@ Space & 4::
 return
 
 Space & 5::
-	SwitchOrStartApp("firefox.exe", "C:\Program Files\Slack\Slack.exe")
+	SwitchOrStartApp("Slack.exe", "C:\Program Files\Slack\Slack.exe")
 return
 
 Space & 8::
-	SwitchOrStartApp("firefox.exe", "C:\Program Files\Notepad++\notepad++.exe")
+	SwitchOrStartApp("notepad++.exe", "C:\Program Files\Notepad++\notepad++.exe")
 return
 
 Space & 9::
-	SwitchOrStartApp("firefox.exe", "C:\Users\HOME-PC\AppData\Local\Programs\Zalo\Zalo.exe")
+	SwitchOrStartApp("Zalo.exe", "C:\Users\HOME-PC\AppData\Local\Programs\Zalo\Zalo.exe")
+return
+
+Space & 0::
+	SwitchOrStartApp("KMPlayer64.exe", "C:\Program Files\KMPlayer 64X\KMPlayer64.exe")
 return
 
 SwitchOrStartApp(processName, exePath){
