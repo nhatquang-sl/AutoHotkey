@@ -155,6 +155,10 @@ Space & 5::
 	SwitchOrStartApp("Slack.exe", "C:\Program Files\Slack\Slack.exe")
 return
 
+Space & 6::
+	SwitchOrStartApp("Postman.exe", "C:\Users\Home\AppData\Local\Postman\Postman.exe")
+return
+
 Space & 8::
 	SwitchOrStartApp("notepad++.exe", "C:\Program Files\Notepad++\notepad++.exe")
 return
