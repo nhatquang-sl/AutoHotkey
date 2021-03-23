@@ -140,7 +140,7 @@ Space & 1::
 return
 
 Space & 2:: 
-	SwitchOrStartApp("Chrome.exe", "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+	SwitchOrStartApp("Chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
 return
 
 Space & 3::
@@ -148,7 +148,7 @@ Space & 3::
 return
 
 Space & 4::
-	SwitchOrStartApp("powershell.exe", "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe")
+	SwitchOrStartApp("Ssms.exe", "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Ssms.exe")
 return
 
 Space & 5::
@@ -159,16 +159,16 @@ Space & 6::
 	SwitchOrStartApp("Postman.exe", "C:\Users\Home\AppData\Local\Postman\Postman.exe")
 return
 
+Space & 7::
+	SwitchOrStartApp("Authy Desktop.exe", "C:\Users\HomePC\AppData\Local\authy\Authy Desktop.exe")
+return
+
 Space & 8::
 	SwitchOrStartApp("notepad++.exe", "C:\Program Files\Notepad++\notepad++.exe")
 return
 
-Space & 9::
-	SwitchOrStartApp("Zalo.exe", "C:\Users\HOME-PC\AppData\Local\Programs\Zalo\Zalo.exe")
-return
-
 Space & 0::
-	SwitchOrStartApp("KMPlayer64.exe", "C:\Program Files\KMPlayer 64X\KMPlayer64.exe")
+	SwitchOrStartApp("KMPlayer.exe", "C:\KMPlayer\KMPlayer.exe")
 return
 
 SwitchOrStartApp(processName, exePath){
