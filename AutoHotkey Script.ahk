@@ -144,7 +144,7 @@ Space & 2::
 return
 
 Space & 3::
-	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
+	SwitchOrStartApp("devenv.exe", "D:\Program Files\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
 return
 
 Space & 4::
@@ -160,7 +160,7 @@ Space & 6::
 return
 
 Space & 7::
-	SwitchOrStartApp("Authy Desktop.exe", "C:\Users\HomePC\AppData\Local\authy\Authy Desktop.exe")
+	SwitchOrStartApp("Authy Desktop.exe", "C:\Users\Home\AppData\Local\authy-electron\Authy Desktop.exe")
 return
 
 Space & 8::
