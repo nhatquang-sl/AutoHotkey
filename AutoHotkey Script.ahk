@@ -31,41 +31,43 @@ Space & k::
 return
 
 Space & j::
-	if GetKeyState("CapsLock", "P") && GetKeyState("Shift", "P")
-		Send {Shift down}{left down}{Home}{Shift up}{left up}
-	else if GetKeyState("Shift", "P")
+	if GetKeyState("Shift", "P")
 		Send {Shift down}{left}{Shift up}
-	else if GetKeyState("CapsLock", "P")
-		Send {left down}{Home}{left up}
+	else if GetKeyState("Control", "P")
+		Send {Control down}#{left}{Control up}
 	else  
 		Send {left}
 return
 
 Space & l::
-	if GetKeyState("CapsLock", "P") && if GetKeyState("Shift", "P")
-		Send {Shift down}{right down}{End}{Shift up}{right up}
-	else if GetKeyState("Shift", "P")
+	if GetKeyState("Shift", "P")
 		Send {Shift down}{right}{Shift up}
-	else if GetKeyState("CapsLock", "P")
-		Send {right down}{End}{right up}
+	else if GetKeyState("Control", "P")
+		Send {Control down}#{right}{Control up}
 	else
 		Send {right}
 return
 
 ; forward-word, backward-word
 Space & o::
-	GetKeyState, state, Shift
-	if state = D
+	if GetKeyState("Control", "P") && if GetKeyState("Shift", "P")
+		Send {Shift down}^{right down}{End}{Shift up}{right up}
+	else if GetKeyState("Shift", "P")
 		Send {Shift down}^{right}{Shift up}
+	else if GetKeyState("Control", "P")
+		Send {right down}{End}{right up}
 	else
 		Send ^{right}
 return
 	
 Space & u::
-	GetKeyState, state, Shift
-	if state = D
+	if GetKeyState("Control", "P") && GetKeyState("Shift", "P")
+		Send {Shift down}^{left down}{Home}{Shift up}{left up}
+	else if GetKeyState("Shift", "P")
 		Send {Shift down}^{left}{Shift up}
-	else
+	else if GetKeyState("Control", "P")
+		Send {left down}{Home}{left up}
+	else  
 		Send ^{left}
 return
 
@@ -156,7 +158,7 @@ Space & 5::
 return
 
 Space & 6::
-	SwitchOrStartApp("Postman.exe", "C:\Users\Home\AppData\Local\Postman\Postman.exe")
+	SwitchOrStartApp("Postman.exe", "C:\Users\HomePC\AppData\Local\Postman\Postman.exe")
 return
 
 Space & 7::
@@ -165,6 +167,10 @@ return
 
 Space & 8::
 	SwitchOrStartApp("notepad++.exe", "C:\Program Files\Notepad++\notepad++.exe")
+return
+
+Space & 9::
+	SwitchOrStartApp("AcroRd32.exe", "C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe")
 return
 
 Space & 0::
