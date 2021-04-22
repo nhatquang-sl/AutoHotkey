@@ -174,7 +174,7 @@ Space & 9::
 return
 
 Space & 0::
-	SwitchOrStartApp("KMPlayer.exe", "C:\KMPlayer\KMPlayer.exe")
+	SwitchOrStartApp("KMPlayer64.exe", "C:\Program Files\KMPlayer 64X\KMPlayer64.exe")
 return
 
 SwitchOrStartApp(processName, exePath){
