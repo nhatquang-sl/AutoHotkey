@@ -15,17 +15,23 @@ Space & Right::Send #{Right}
 
 ; CapsLock+I/K/J/L to Up/Down/Left/Right
 Space & i::
-	GetKeyState, state, Shift
-	if state = D
-		Send {Shift down}{up}{Shift up}
+	if GetKeyState("Shift", "P")
+		Send +{up}
+	else if (GetKeyState("ALT") && GetKeyState("CTRL"))
+		Send ^{PgUp}
+	else if (GetKeyState("ALT"))
+		Send {PgUp}
 	else
 		Send {up}
 return
 
 Space & k::
-	GetKeyState, state, Shift
-	if state = D
-		Send {Shift down}{down}{Shift up}
+	if GetKeyState("Shift", "P")
+		Send +{down}
+	else if (GetKeyState("ALT") && GetKeyState("CTRL"))
+		Send ^{PgDn}
+	else if (GetKeyState("ALT")) 
+		Send {PgDn}
 	else
 		Send {down}
 return
