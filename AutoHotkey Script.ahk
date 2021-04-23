@@ -50,23 +50,15 @@ return
 
 ; forward-word, backward-word
 Space & o::
-	if GetKeyState("Control", "P") && if GetKeyState("Shift", "P")
-		Send {Shift down}^{right down}{End}{Shift up}{right up}
-	else if GetKeyState("Shift", "P")
-		Send {Shift down}^{right}{Shift up}
-	else if GetKeyState("Control", "P")
-		Send {right down}{End}{right up}
+	if GetKeyState("Shift", "P")
+		Send +^{right}
 	else
 		Send ^{right}
 return
 	
 Space & u::
-	if GetKeyState("Control", "P") && GetKeyState("Shift", "P")
-		Send {Shift down}^{left down}{Home}{Shift up}{left up}
-	else if GetKeyState("Shift", "P")
-		Send {Shift down}^{left}{Shift up}
-	else if GetKeyState("Control", "P")
-		Send {left down}{Home}{left up}
+	if GetKeyState("Shift", "P")
+		Send +^{left}
 	else  
 		Send ^{left}
 return
