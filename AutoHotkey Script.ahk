@@ -93,15 +93,23 @@ return
 
 ; move-begining-of-line, move-end-of-line
 Space & y::
-	if GetKeyState("Shift", "P")
-		Send {Shift down}{left down}{Home}{Shift up}{left up}
+	if GetKeyState("Shift", "P") && GetKeyState("Control", "P")
+		Send ^+{Home}
+	else if GetKeyState("Shift", "P")
+		Send +{Home}
+	else if GetKeyState("Control", "P")
+		Send ^{Home}
 	else
 		Send {Home}
 return 
 
 Space & p::
-	if GetKeyState("Shift", "P")
-		Send {Shift down}{right down}{End}{Shift up}{right up}
+	if GetKeyState("Shift", "P") && GetKeyState("Control", "P")
+		Send ^+{End}
+	else if GetKeyState("Shift", "P")
+		Send +{End}
+	else if GetKeyState("Control", "P")
+		Send ^{End}
 	else
 		Send {End}
 return
