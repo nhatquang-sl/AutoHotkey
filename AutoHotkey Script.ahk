@@ -7,7 +7,7 @@ Space::Send {Space}
 
 Space & Esc::Send !{F4}
 
-Esc::WinMinimize, A  ;
+#Esc::WinMinimize, A  ;
 
 ; Window + Up/Down/Left/Right
 Space & Up::Send #{Up}
