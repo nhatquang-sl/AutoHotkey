@@ -7,6 +7,8 @@ Space::Send {Space}
 
 Space & Esc::Send !{F4}
 
+Esc::WinMinimize, A  ;
+
 ; Window + Up/Down/Left/Right
 Space & Up::Send #{Up}
 Space & Down::Send #{Down}
@@ -152,7 +154,7 @@ Space & 2::
 return
 
 Space & 3::
-	SwitchOrStartApp("devenv.exe", "D:\Program Files\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
+	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
 return
 
 Space & 4::
