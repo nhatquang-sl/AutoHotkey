@@ -145,6 +145,10 @@ Space & `;:: +`;
 Space & w::Send !{up}       
 Space & s::Send !{down}
 
+Space & -::
+	SwitchOrStartApp("explorer.exe", "C:\Windows\explorer.exe")
+return
+
 Space & 1::
 	SwitchOrStartApp("Code.exe", "C:\Program Files\Microsoft VS Code\Code.exe")
 return
@@ -194,9 +198,11 @@ SwitchOrStartApp(processName, exePath){
 	{
 		this_id := id%A_Index%
 		WinGet this_processName, ProcessName, ahk_id %this_id%`
-		
+		WinGetTitle, this_title, ahk_id %this_id%
+		this_len := StrLen(this_title)
 		;MsgBox, 4, , this_processName = %this_processName%`nprocessName=%processName%
 		;IfMsgBox, NO, break
+		if this_len > 0
 		if this_processName = %processName%
 			idLast := id%A_Index%
 	}
