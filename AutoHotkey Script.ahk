@@ -1,7 +1,7 @@
 ﻿; HotKey: Win = #, Control = ^, Alt = !, Shift = +
 
 SetCapsLockState AlwaysOff
-CapsLock::Control
+CapsLock::LWin
 
 Space::Send {Space}
 
@@ -9,68 +9,18 @@ Space & Esc::Send !{F4}
 
 #Esc::WinMinimize, A  ;
 
-; Window + Up/Down/Left/Right
-Space & Up::Send #{Up}
-Space & Down::Send #{Down}
-Space & Left::Send #{Left}
-Space & Right::Send #{Right}
 
 ; CapsLock+I/K/J/L to Up/Down/Left/Right
-Space & i::
-	if GetKeyState("Shift", "P")
-		Send +{up}
-	else if (GetKeyState("ALT") && GetKeyState("CTRL"))
-		Send ^{PgUp}
-	else if (GetKeyState("ALT"))
-		Send {PgUp}
-	else
-		Send {up}
-return
+Space & i:: up
+Space & k:: down
+Space & j:: left
+Space & l:: right
 
-Space & k::
-	if GetKeyState("Shift", "P")
-		Send +{down}
-	else if (GetKeyState("ALT") && GetKeyState("CTRL"))
-		Send ^{PgDn}
-	else if (GetKeyState("ALT")) 
-		Send {PgDn}
-	else
-		Send {down}
-return
+Space & u:: Home
+Space & o:: End
 
-Space & j::
-	if GetKeyState("Shift", "P")
-		Send {Shift down}{left}{Shift up}
-	else if GetKeyState("Control", "P")
-		Send {Control down}#{left}{Control up}
-	else  
-		Send {left}
-return
-
-Space & l::
-	if GetKeyState("Shift", "P")
-		Send {Shift down}{right}{Shift up}
-	else if GetKeyState("Control", "P")
-		Send {Control down}#{right}{Control up}
-	else
-		Send {right}
-return
-
-; forward-word, backward-word
-Space & o::
-	if GetKeyState("Shift", "P")
-		Send +^{right}
-	else
-		Send ^{right}
-return
-	
-Space & u::
-	if GetKeyState("Shift", "P")
-		Send +^{left}
-	else  
-		Send ^{left}
-return
-
+Space & y:: PgUp
+Space & h:: PgDn
 
 ;CapsLock + f to delete-char
 ;CapsLock + d to delete-backward-char
@@ -91,17 +41,7 @@ Space & g::
 		Send {Shift down}{right}{End}{Shift up}{Delete}
 return
 
-; move-begining-of-line, move-end-of-line
-Space & y::
-	if GetKeyState("Shift", "P") && GetKeyState("Control", "P")
-		Send ^+{Home}
-	else if GetKeyState("Shift", "P")
-		Send +{Home}
-	else if GetKeyState("Control", "P")
-		Send ^{Home}
-	else
-		Send {Home}
-return 
+
 
 Space & p::
 	if GetKeyState("Shift", "P") && GetKeyState("Control", "P")
@@ -114,14 +54,13 @@ Space & p::
 		Send {End}
 return
 
-; Ctrl + z, Ctrl + x, Ctrl + c, Ctrl + v, Ctrl + b, Ctrl + h
+; Ctrl + z, Ctrl + x, Ctrl + c, Ctrl + v, Ctrl + b
 Space & b:: ^b
 Space & z:: ^z
 Space & x:: ^x
 Space & c:: ^c
 Space & v:: ^v
 Space & t:: ^t
-Space & h:: ^h
 
 ; Ctrl + Tab
 Space & Tab:: ^Tab
