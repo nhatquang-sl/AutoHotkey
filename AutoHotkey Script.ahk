@@ -97,11 +97,11 @@ Space & 2::
 return
 
 Space & 3::
-	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\IDE\devenv.exe")
+	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe")
 return
 
 Space & 4::
-	SwitchOrStartApp("Ssms.exe", "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Ssms.exe")
+	SwitchOrStartApp("TablePlus.exe", "C:\Program Files\TablePlus\TablePlus.exe")
 return
 
 Space & 5::
@@ -113,7 +113,7 @@ Space & 6::
 return
 
 Space & 7::
-	SwitchOrStartApp("Authy Desktop.exe", "C:\Users\Home\AppData\Local\authy-electron\Authy Desktop.exe")
+	SwitchOrStartApp("pgAdmin4.exe", "C:\Program Files\PostgreSQL\14\pgAdmin 4\bin\pgAdmin4.exe")
 return
 
 Space & 8::
