@@ -152,7 +152,3 @@ SwitchOrStartApp(processName, exePath){
 	else 
 		WinActivate, ahk_id %idLast%
 }
-
-
-LWin::LAlt
-LAlt::LWin
