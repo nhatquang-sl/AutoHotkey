@@ -10,6 +10,18 @@ Space & Esc::Send !{F4}
 #Esc::WinMinimize, A  ;
 
 
+Space & F1::Send ^{1}
+Space & F2::Send ^{2}
+Space & F3::Send ^{3}
+Space & F4::Send ^{4}
+Space & F5::Send ^{5}
+Space & F6::Send ^{6}
+Space & F7::Send ^{7}
+Space & F8::Send ^{8}
+Space & F9::Send ^{9}
+Space & F10::Send ^{0}
+
+
 ; CapsLock+I/K/J/L to Up/Down/Left/Right
 Space & i:: up
 Space & k:: down
@@ -101,7 +113,8 @@ Space & 3::
 return
 
 Space & 4::
-	SwitchOrStartApp("TablePlus.exe", "C:\Program Files\TablePlus\TablePlus.exe")
+	;SwitchOrStartApp("TablePlus.exe", "C:\Program Files\TablePlus\TablePlus.exe")
+	SwitchOrStartApp("Ssms.exe", "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Ssms.exe")
 return
 
 Space & 5::
@@ -109,11 +122,11 @@ Space & 5::
 return
 
 Space & 6::
-	SwitchOrStartApp("Postman.exe", "C:\Users\HomePC\AppData\Local\Postman\Postman.exe")
+	SwitchOrStartApp("Postman.exe", "C:\Users\LT\AppData\Local\Postman\Postman.exe")
 return
 
 Space & 7::
-	SwitchOrStartApp("pgAdmin4.exe", "C:\Program Files\PostgreSQL\14\pgAdmin 4\bin\pgAdmin4.exe")
+	SwitchOrStartApp("Authy Desktop.exe", "C:\Users\LT\AppData\Local\authy\Authy Desktop.exe")
 return
 
 Space & 8::
