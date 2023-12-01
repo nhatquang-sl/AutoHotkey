@@ -93,8 +93,10 @@ Space & `;:: +`;
 
 
 ; move line up/down
-Space & w::Send !{up}       
+Space & w::Send !{up}
 Space & s::Send !{down}
+
+Space & \::return
 
 Space & -::
 	SwitchOrStartApp("explorer.exe", "C:\Windows\explorer.exe")
@@ -109,7 +111,7 @@ Space & 2::
 return
 
 Space & 3::
-	SwitchOrStartApp("devenv.exe", "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe")
+	SwitchOrStartApp("devenv.exe", "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe")
 return
 
 Space & 4::
@@ -118,7 +120,7 @@ Space & 4::
 return
 
 Space & 5::
-	SwitchOrStartApp("Slack.exe", "C:\Program Files\Slack\Slack.exe")
+	SwitchOrStartApp("Slack.exe", "C:\Users\LT\AppData\Local\slack\slack.exe")
 return
 
 Space & 6::
@@ -126,7 +128,7 @@ Space & 6::
 return
 
 Space & 7::
-	SwitchOrStartApp("Authy Desktop.exe", "C:\Users\LT\AppData\Local\authy\Authy Desktop.exe")
+	SwitchOrStartApp("WindowsTerminal.exe", "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.13.11431.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe")
 return
 
 Space & 8::
